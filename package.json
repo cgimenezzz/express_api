@@ -1,0 +1,29 @@
+{
+	"name": "express_api",
+	"version": "0.0.1",
+	"description": "Express REST API",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js",
+		"dev": "nodemon index.js",
+		"prod": "pm2 start index.js",
+		"build-docs": "grunt"
+	},
+	"dependencies": {
+		"body-parser": "^1.19.0",
+		"chalk": "^3.0.0",
+		"cors": "^2.8.5",
+		"express": "^4.17.1",
+		"joi": "^14.3.1",
+		"loglevel": "^1.6.6",
+		"moment": "^2.24.0",
+		"mongoose": "^5.9.7"
+	},
+	"devDependencies": {
+		"grunt": "^1.0.4",
+		"grunt-apidoc": "^0.11.0",
+		"nodemon": "^2.0.2"
+	},
+	"author": "cgimenezzz",
+	"license": "MIT"
+}

@@ -6,18 +6,19 @@
  * @module src
  */
 
+// Libs
+const moment = require('moment');
 // Config
 const config = require('./config/app');
 // Utils
 const response = require('./utils/ResponseUtil');
-let moment = require('moment');
-const log = require('loglevel');
+const logger = require('./utils/LoggerUtil');
 // Controllers
-const taskController = require('./controllers/TaskController');
+// const taskController = require('./controllers/TaskController');
 
 module.exports = (express) => {
 
-	log.setLevel(config.LOG_LEVEL) 
+	// log.setLevel(config.LOG_LEVEL) 
 	let router = express.Router();
 
 	/**
@@ -48,15 +49,15 @@ module.exports = (express) => {
 	*/
 
 	router.get('/', (req, res) => {
-		log.info('[info] - ['+moment().format()+'] - run index')
+		logger.infoLevel('[info] - run index')
 		response.sendResponse(res, 200, 'App listening on port: ' + config.API_PORT, null);
 	});
 
-	router.post('/spearhead/action', (req, res) => {
-		log.info('[info] - ['+moment().format()+'] - run actions callback')
+	router.post('/action', (req, res) => {
+		logger.infoLevel('[info] - run actions callback')
+		
 		let body = req.body;
-
-		log.debug(body)
+		logger.infoLevel(body)
 		response.sendResponse(res, 200, 'run decode response', null);
 	});
 
